@@ -1,0 +1,22 @@
+{
+  "name": "node-express-app",
+  "version": "0.0.0",
+  "description": "a node app for learning",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dowhileluke/node-express-app.git"
+  },
+  "author": "Luke Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dowhileluke/node-express-app/issues"
+  },
+  "dependencies": {
+    "pg": "~4.3.0",
+    "express": "~4.12.2"
+  }
+}
