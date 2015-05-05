@@ -1,16 +1,25 @@
 <div class="row">
   <div class="col-xs-4">
-    <form ng-submit="register()" novalidate>
-      <div class="form-group">
+    <alert ng-show="error" type="danger" close="dismiss()">{{error}}</alert>
+    <form ng-submit="register()" name="registration" novalidate>
+      <div class="form-group" ng-class="{'has-error': usernameInvalid() || registration.username.$error.unique}">
         <label>Desired username</label>
-        <input ng-model="account.username" class="form-control" required ng-maxlength="20" placeholder="Username" />
+        <input ng-model="account.username" name="username" class="form-control" required unique ng-maxlength="20" placeholder="Username" ng-model-options="{ debounce: 500 }" />
+        <div class="help-block" ng-show="usernameInvalid()">A username is required!</div>
+        <div class="help-block" ng-show="registration.username.$error.unique">That username is already in use!</div>
+        <div class="help-block" ng-hide="registration.username.$error.required || registration.username.$pending.unique || registration.username.$error.unique">That username is available!</div>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{'has-error': passwordsInvalid()}">
         <label>Password (twice)</label>
-        <input type="password" ng-model="account.password" class="form-control" required placeholder="Password" />
-        <input type="password" ng-model="account.again" class="form-control" required placeholder="Password again" />
+        <input type="password" ng-model="account.password" name="password" class="form-control" required placeholder="Password" />
+        <br />
+        <input type="password" ng-model="account.again" name="confirm" class="form-control" required placeholder="Password again" />
+        <span ng-if="passwordsTouched()">
+          <div class="help-block" ng-show="passwordsMissing()">A password is required!</div>
+          <div class="help-block" ng-show="passwordsMismatched()">Passwords must match!</div>
+        </span>
       </div>
-      <input type="submit" value="Log in" class="btn btn-primary" />
+      <input type="submit" value="Register" class="btn btn-primary" />
     </form>
   </div>
 </div>

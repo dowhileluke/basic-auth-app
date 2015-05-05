@@ -93,7 +93,7 @@ db.connect();
     var salt = crypto.randomBytes(16).toString('hex');
     var hash = generateHash(password, salt);
 
-    if (username.length && password.length) {
+    if (username && username.length && password && password.length) {
       fn.userExists(username, function (err, exists) {
 
         if (err) {
