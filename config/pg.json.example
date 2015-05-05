@@ -3,6 +3,6 @@
   "database": "",
   "password": "",
   "port": 5432,
-  "host": "",
+  "host": "localhost",
   "ssl": false
 }

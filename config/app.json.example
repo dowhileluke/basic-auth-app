@@ -1,0 +1,5 @@
+{
+  "root": "client",
+  "index": "index.html",
+  "port": 3000
+}

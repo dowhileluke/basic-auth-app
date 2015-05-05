@@ -1,22 +1,28 @@
 {
-  "name": "node-express-app",
-  "version": "0.0.0",
-  "description": "a node app for learning",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "basic-auth-app",
+  "version": "0.0.1",
+  "description": "A nodejs+postgres API/hosting server for an angularjs webapp using basic authentication via passportjs.",
+  "main": "server",
+  "dependencies": {
+    "body-parser": "~1.12.3",
+    "express": "~4.12.3",
+    "passport": "~0.2.1",
+    "passport-http": "~0.2.2",
+    "pg": "~4.3.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dowhileluke/node-express-app.git"
   },
-  "author": "Luke Davis",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dowhileluke/node-express-app/issues"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "pg": "~4.3.0",
-    "express": "~4.12.2"
-  }
+  "keywords": [
+    "nodejs",
+    "postgres",
+    "angularjs",
+    "passportjs"
+  ],
+  "author": "Luke Davis",
+  "license": "MIT"
 }
